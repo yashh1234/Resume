@@ -3,12 +3,27 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <title>Yash Gupta's Resume</title>
+  <script type="text/javascript">
+    window.onload = function () {
+      const pdfUrl = "https://docs.google.com/gview?url=https://github.com/yashh1234/Resume/raw/main/Yash_Gupta_Resume.pdf&embedded=true";
+      // Try opening in a new tab
+      const newTab = window.open(pdfUrl, "_blank");
+      // If blocked, show inline version as fallback
+      if (!newTab || newTab.closed || typeof newTab.closed === "undefined") {
+        document.getElementById("resumeFrame").src = pdfUrl;
+      } else {
+        // Optionally, close this window if you want pure redirection behavior:
+        // window.close();
+      }
+    };
+  </script>
 </head>
 <body style="width:100%; height:100%; margin:0;">
-  <iframe 
-    src="https://docs.google.com/gview?url=https://github.com/yashh1234/Resume/raw/main/Yash_Gupta_Resume.pdf&embedded=true" 
-    style="width:100%; height:100%;" 
-    frameborder="0">
+  <!-- Fallback iframe if popup blocked -->
+  <iframe
+    id="resumeFrame"
+    style="width:100%; height:100%; border:0;"
+    title="Yash Gupta's Resume (Fallback)">
   </iframe>
 </body>
 </html>
